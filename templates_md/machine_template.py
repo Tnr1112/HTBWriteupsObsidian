@@ -1,34 +1,46 @@
 from templates_md import get_template_char_user_rating, get_template_chart_radar
 import datetime
 
-
-
-
-def get_machine_template(VAULT_PATH,machine_data,user_average,author,user_rating,machine_tags):
-
-    if machine_data.user_owned:
-        user_owned = "✅"
-    else:
-        user_owned = "❌"
-        machine_data.user_owned = False
-
-    if machine_data.root_owned:
-        root_owned = "✅"
-    else:
-        root_owned = "❌"
-        machine_data.root_owned = False
-
-    if machine_data.active:
-        active = "✅"
-    else:
-        active = "❌"
-    
-    
+def get_machine_template(VAULT_PATH,machine_data,user_average,author,user_rating,machine_tags,ownWriteup):
     time_today = datetime.datetime.now()
     string_tags = ""
     for tag in machine_tags:
-        tag_with_no_spaces= machine_tags[tag]["name"].replace(" ", "_")
+        tag_with_no_spaces = tag["name"].replace(" ", "_")
         string_tags = string_tags + "#" + tag_with_no_spaces + " "
+
+    botonUpdateMachineInfo = '''
+```dataviewjs
+const {createButton} = app.plugins.plugins["buttons"]
+createButton({app,
+            el: this.container,
+            args: {
+                name: "Update this Machine info",
+                type: "link",
+                action: "obsidian://shell-commands/?vault=HTB&execute=g7sm2q030y&_writeup="+this.current().writeup,
+                },
+            })
+```'''
+    botonCreateWriteup = '''
+```dataviewjs
+const {createButton} = app.plugins.plugins["buttons"]
+createButton({app,
+            el: this.container,
+            args: {
+                name: "Create Writeup",
+                type: "link",
+                action: "obsidian://shell-commands/?vault=HTB&execute=518r5yzp4k",
+                color: "yellow",
+                },
+            })
+```'''
+
+    botonWriteup = '''
+```dataviewjs
+const {update} = this.app.plugins.plugins["metaedit"].api
+const {createButton} = app.plugins.plugins["buttons"]
+createButton({app, el: this.container, args: {name: this.current().writeup ? "Writeup: ✅" : "Writeup: ❌"}, clickOverride: {click: update, params: ['writeup', !this.current().writeup, this.current().file.path]}})
+```'''
+
     return f'''
 ---
 fileClass: Machine
@@ -43,18 +55,19 @@ fileClass: Machine
 
 ## Metadata
 
-|                       |   |
-| ----------------      | - |
-| ID                    |{machine_data.id} |
-| Name                  |{machine_data.name} |
-| Active                |{active}  |
-| User Flag             |{user_owned} |
-| Root Flag             |{root_owned}|
-| Difficulty Text       |{machine_data.difficulty}  |
-| Stars                 |⭐️ {machine_data.stars} |
-| Created Note          |{time_today.strftime("%m/%d/%y")} |
-| Published             |{machine_data.release_date.strftime("%m/%d/%y")} |
-| tags                  |{string_tags} |
+|              |                                            |
+| ---------    | ------------------------------------------ |
+| ID           | `=this.id`                                 |
+| Name         | `=this.name`                               |
+| Active       | `$=this.current().active == true ? "✅" : "❌"`    |
+| User Flag    | `$=this.current().user_flag == true ? "✅" : "❌"` |
+| Root Flag    | `$=this.current().root_flag == true ? "✅" : "❌"` |
+| Writeup      | `$=this.current().writeup == true ? "✅" : "❌"` |
+| Difficulty   | `=this.difficulty_text`                    |
+| Stars        | ⭐️ `=this.stars`                          |
+| Created Note | `=this.created`                            |
+| Published    | `=this.published`                          |
+| tags         | `=this.tags`                               |
 
 <p style = "display:none">
 id:: {machine_data.id}
@@ -64,9 +77,10 @@ os::{machine_data.os}
 user_flag:: {machine_data.user_owned}
 root_flag:: {machine_data.root_owned}
 difficulty_text:: {machine_data.difficulty}
+writeup:: {ownWriteup}
 stars:: {machine_data.stars}
-created:: {time_today.strftime("%m/%d/%Y")}
-published:: {machine_data.release_date.strftime("%m/%d/%y")}
+created:: {time_today.strftime("%d/%m/%Y")}
+published:: {machine_data.release_date.strftime("%d/%m/%y")}
 avatar:: {machine_data.avatar}
 tags:: {string_tags}
 </p>
@@ -81,11 +95,10 @@ tags:: {string_tags}
 {get_template_char_user_rating(user_rating)}
 
 
-```button
-name Update this Machine info
-type link
-action obsidian://shell-commands/?vault=HTB&execute=g7sm2q030y
-templater true
-```
+{botonUpdateMachineInfo}
+
+{botonCreateWriteup}
+
+{botonWriteup}
 
 '''

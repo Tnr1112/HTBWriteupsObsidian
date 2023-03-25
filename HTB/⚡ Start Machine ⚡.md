@@ -48,7 +48,7 @@ flowchart TB
 ```button
 name Update Machines info
 type link
-action obsidian://shell-commands/?vault=HTB&execute=usnoddh2no
+action obsidian://shell-commands/?vault=HTB&execute=usnoddh2no&_writeup=false
 templater true
 color blue
 Custom Class custom-buttom

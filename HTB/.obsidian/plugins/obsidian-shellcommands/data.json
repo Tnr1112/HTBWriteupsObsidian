@@ -18,7 +18,7 @@
     {
       "id": "m6e17y5rts",
       "platform_specific_commands": {
-        "default": "/usr/bin/python3 {{folder_path:absolute}}/../htb_api.py -m {{_machine_name}} -v {{folder_path:absolute}}/"
+        "default": "python {{folder_path:absolute}}/../htb_api.py -m {{_machine_name}} -v {{folder_path:absolute}}/ -w false"
       },
       "shells": {},
       "alias": "New Machine Note",
@@ -53,7 +53,7 @@
     {
       "id": "usnoddh2no",
       "platform_specific_commands": {
-        "default": "/usr/bin/python3 {{folder_path:absolute}}/../htb_api.py  -m \"\" -v {{folder_path:absolute}}/"
+        "default": "python {{folder_path:absolute}}/../htb_api.py  -m \"\" -v {{folder_path:absolute}}/"
       },
       "shells": {},
       "alias": "Update Machine",
@@ -83,7 +83,7 @@
     {
       "id": "g7sm2q030y",
       "platform_specific_commands": {
-        "default": "python3 {{folder_path:absolute}}/../../../htb_api.py  -m {{folder_name}} -v {{folder_path:absolute}}/../../"
+        "default": "python {{folder_path:absolute}}/../../../htb_api.py  -m {{folder_name}} -v {{folder_path:absolute}}/../../ -w {{_writeup}}"
       },
       "shells": {},
       "alias": "Update this Machine",
@@ -108,6 +108,30 @@
           "prompt_id": "j2fcw45kfm"
         }
       ],
+      "variable_default_values": {}
+    },
+    {
+      "id": "518r5yzp4k",
+      "platform_specific_commands": {
+        "default": "python {{folder_path:absolute}}/../../../writeupCreator.py -m {{folder_name}} -v {{folder_path:absolute}}/../../"
+      },
+      "shells": {},
+      "alias": "Writeup creator",
+      "icon": null,
+      "confirm_execution": true,
+      "ignore_error_codes": [],
+      "output_channels": {
+        "stdout": "notification",
+        "stderr": "notification"
+      },
+      "output_wrappers": {
+        "stdout": null,
+        "stderr": null
+      },
+      "output_channel_order": "stdout-first",
+      "events": {},
+      "command_palette_availability": "enabled",
+      "preactions": [],
       "variable_default_values": {}
     }
   ],
@@ -139,6 +163,11 @@
       "id": "5a0vmo68z6",
       "name": "vault_folder",
       "description": "Default folder"
+    },
+    {
+      "id": "4u0rx38os5",
+      "name": "writeup",
+      "description": ""
     }
   ],
   "output_wrappers": []

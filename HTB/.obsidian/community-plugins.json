@@ -4,5 +4,8 @@
   "buttons",
   "obsidian-shellcommands",
   "obsidian-chartsview-plugin",
-  "table-editor-obsidian"
+  "table-editor-obsidian",
+  "obsidian-pandoc",
+  "obsidian-paste-image-rename",
+  "metaedit"
 ]

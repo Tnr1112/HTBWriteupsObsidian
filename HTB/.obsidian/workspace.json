@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fc32798b129a248d",
+        "id": "a0b7af1ec1b4150a",
         "type": "tabs",
         "children": [
           {
-            "id": "58b14016d8cd8da5",
+            "id": "83ecfca810f7732d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "⚡ Start Machine ⚡.md",
-                "mode": "source",
+                "file": "Index.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -72,8 +72,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "84608c2c80821b30",
@@ -94,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 212.50260543823242
   },
   "right": {
     "id": "897b955182786bfe",
@@ -110,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "⚡ Start Machine ⚡.md",
+                "file": "Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,8 +126,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "⚡ Start Machine ⚡.md",
-                "linksCollapsed": false,
+                "file": "Index.md",
+                "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -150,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "⚡ Start Machine ⚡.md"
+                "file": "Index.md"
               }
             }
           },
@@ -161,24 +160,97 @@
               "type": "git-view",
               "state": {}
             }
+          },
+          {
+            "id": "3782b3862822d812",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "88503bc431861a1e",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "b8644a1f83de2eba",
+            "type": "leaf",
+            "state": {
+              "type": "SC-custom-variables-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
-  "active": "58b14016d8cd8da5",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "83ecfca810f7732d",
   "lastOpenFiles": [
-    "Index.md",
     "⚡ Start Machine ⚡.md",
-    "Machines/Lame/Lame.md",
-    "TODO.md",
-    "fileClass/Machine.md",
-    "Machines/Lame/00-index.md",
-    "Machines/Lame/03-post-exploitation.md",
-    "Machines/Trick/Trick.md",
-    "Machines/Trick/01-recon.md",
-    "Machines/Trick/00-index.md"
+    "Machines/MetaTwo/WriteupMetaTwo.md",
+    "Machines/MetaTwo/MetaTwo.md",
+    "Machines/MetaTwo/20 - jnelson.md",
+    "Machines/MetaTwo/25 - root.md",
+    "Machines/MetaTwo/15 - Webpages.md",
+    "Machines/MetaTwo/10 - Common Enumeration.md",
+    "Machines/MetaTwo/05 - Loot.md",
+    "Machines/MetaTwo/00 - Index.md",
+    "Machines/MetaTwo/images/metaTwoBanner.png",
+    "Machines/BroScience/00 - Index.md",
+    "Machines/MetaTwo/indexExt.md",
+    "Machines/Stocker/25 - root.md",
+    "Machines/Stocker/indexExt.md",
+    "Machines/Stocker/Stocker.md",
+    "Machines/Stocker/WriteupStocker.md",
+    "Machines/Soccer/30 - Player.md",
+    "Machines/Soccer/Writeup Soccer sin sqlmap.md",
+    "Machines/Soccer/Writeup Soccer sin sqlmap-Github.md",
+    "Machines/Precious/Writeup Precious.md",
+    "Machines/Precious/30 - root.md",
+    "Machines/Inject/WriteupInject.md",
+    "Machines/Inject/30 - root.md",
+    "Machines/Agile/WriteupAgile.md",
+    "Machines/Agile/30 - root.md",
+    "Machines/BroScience/30 - root.md",
+    "Machines/BroScience/WriteupBroScience.md",
+    "Machines/MetaTwo/images/20-uploadPayload.png",
+    "Machines/MetaTwo/images/20-managerPanel.png",
+    "Machines/MetaTwo/images/20-wpnonceEvents.png",
+    "Machines/MetaTwo/images/15-metapress.htb-events-vuln.png",
+    "Machines/Stocker/images/stockerBanner.png",
+    "Machines/Stocker/images/20-iframePasswd.png",
+    "Machines/Stocker/images/20-PDF1.png",
+    "Machines/Stocker/images/20-PDFIndex.js.png",
+    "Machines/Stocker/images/Pasted image 20230324171252.png",
+    "Machines/Stocker/images",
+    "Machines/Stocker",
+    "Machines/Phoenix/images",
+    "Machines/Phoenix",
+    "images",
+    "asd",
+    "Machines/Inject/WriteupInject",
+    "Machines/Inject - copia/images",
+    "Machines/Inject - copia",
+    "Machines/BroScience/images"
   ]
 }

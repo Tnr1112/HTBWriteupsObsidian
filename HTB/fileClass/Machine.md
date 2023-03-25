@@ -13,6 +13,7 @@ stars:: {"type":"Input","options":{}}
 tags:: {"type":"Input","options":{}}
 created:: {"type":"Date","options":{"dateFormat":"MM-DD-YYYY","defaultInsertAsLink":"false"}}
 published:: {"type":"Date","options":{"dateFormat":"MM-DD-YYYY","defaultInsertAsLink":"false"}}
+writeup:: {"type":"Boolean","options":{}}
 ---
 
 
